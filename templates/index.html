@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Converter</title>
+
+    <!-- Added Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Added custom styles -->
+    <style>
+        body {
+            background: #f1f1f1;
+            font-family: 'Arial';
+        }
+
+        .branding {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .branding img {
+            width: 100px;
+        }
+
+        h1 {
+            margin-bottom: -96px;
+            margin-top: 98px;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 0em;
+            color: #007bff;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 100px auto;
+            background: #fff;
+            padding: 40px 60px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control-file {
+            padding: 20px;
+        }
+
+        .form-group label {
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        button {
+            background: #007bff;
+            color: #fff;
+            padding: 12px 0;
+            font-size: 1.2em;
+        }
+
+        .error {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Added branding -->
+    <header class="branding">
+        
+        <h1>PDF &#x2192; Audio </h1>
+    </header>
+
+    <main>
+
+        <section class="container">
+
+            <!-- Updated headings -->
+            <h2>Convert PDF to Audio</h2>
+
+            <!-- Updated form -->
+            <form action="/process" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="file">Choose PDF/TEXT</label>
+
+                    <!-- Made file input bigger -->
+                    <input class="form-control-file" type="file" id="file" name="file" accept=".pdf" required>
+                </div>
+
+                <!-- Made button full-width -->
+                <button class="btn btn-primary btn-block">Convert</button>
+
+            </form>
+
+            <!-- Error handling -->
+            {% if error %}
+            <p class="error mt-3">{{ error }}</p>
+            {% endif %}
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
